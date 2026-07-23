@@ -1,0 +1,2172 @@
+/*==================================================
+        STAYNEST CSS - PART 1
+        Global + Navbar + Hero + Homepage
+==================================================*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- Global ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f9fa;
+    color:#212529;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    transition:.3s;
+}
+
+section{
+    padding:80px 0;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar{
+    padding:15px 0;
+    transition:.3s;
+    z-index:999;
+}
+
+.navbar-brand span{
+    font-weight:700;
+    color:#0d6efd;
+}
+
+.nav-link{
+    font-weight:500;
+    margin:0 8px;
+    color:#333 !important;
+    position:relative;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0;
+    height:2px;
+    background:#0d6efd;
+    transition:.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    width:100%;
+}
+
+.btn{
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("../images/hero.jpg") center/cover no-repeat;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-overlay{
+    width:100%;
+}
+
+.hero h1{
+    font-size:3.4rem;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:1.2rem;
+}
+
+.search-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.search-box .form-control{
+    border:none;
+    padding:16px;
+    border-radius:10px 0 0 10px;
+}
+
+.search-box .btn{
+    border-radius:0 10px 10px 0;
+    padding:0 30px;
+}
+
+/* ---------- Popular Cities ---------- */
+
+.city-card{
+    transition:.35s;
+    cursor:pointer;
+}
+
+.city-card img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    margin:auto;
+    transition:.35s;
+}
+
+.city-card:hover{
+    transform:translateY(-8px);
+}
+
+.city-card:hover img{
+    transform:scale(1.08);
+}
+
+.city-card h5{
+    margin-top:18px;
+    font-weight:600;
+}
+
+/* ---------- Property Cards ---------- */
+
+.property-card{
+    overflow:hidden;
+    border:none;
+    border-radius:18px;
+    transition:.35s;
+    background:#fff;
+}
+
+.property-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.property-card img{
+    height:240px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.property-card:hover img{
+    transform:scale(1.08);
+}
+
+.property-card .badge{
+    font-size:.8rem;
+}
+
+.property-card h5{
+    font-weight:700;
+}
+
+.property-card h4{
+    font-weight:700;
+}
+
+.property-card .btn{
+    border-radius:8px;
+}
+
+/* Heart Button */
+
+.property-card button{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.3s;
+}
+
+.property-card button:hover{
+    background:#dc3545 !important;
+    color:#fff;
+}
+
+/* ---------- About ---------- */
+
+#about img{
+    transition:.4s;
+    border-radius:18px;
+}
+
+#about img:hover{
+    transform:scale(1.03);
+}
+
+#about h2{
+    font-weight:700;
+}
+
+/* ---------- Why Choose ---------- */
+
+.card{
+    border:none;
+    border-radius:18px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+/* ---------- Amenities ---------- */
+
+.card i{
+    transition:.3s;
+}
+
+.card:hover i{
+    transform:scale(1.15);
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .search-box .input-group{
+        flex-direction:column;
+    }
+
+    .search-box .form-control{
+        border-radius:10px;
+        margin-bottom:10px;
+    }
+
+    .search-box .btn{
+        border-radius:10px;
+        width:100%;
+        padding:14px;
+    }
+
+    .city-card img{
+        width:120px;
+        height:120px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    section{
+        padding:50px 0;
+    }
+
+    .hero h1{
+        font-size:1.9rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .city-card img{
+        width:100px;
+        height:100px;
+    }
+
+}
+
+/*==================================================
+        PART 2A
+        PROPERTY LIST PAGE
+==================================================*/
+
+/*======================
+Page Header
+=======================*/
+
+.breadcrumb{
+    margin-bottom:15px;
+}
+
+.breadcrumb-item a{
+    color:#0d6efd;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.breadcrumb-item.active{
+    color:#6c757d;
+}
+
+section.bg-light h1{
+    font-size:2.6rem;
+    font-weight:700;
+    color:#212529;
+}
+
+section.bg-light p{
+    font-size:1.05rem;
+    color:#6c757d;
+}
+
+/*======================
+Filter Sidebar
+=======================*/
+
+.card.rounded-4{
+    border-radius:20px !important;
+}
+
+.card.rounded-4 h4{
+    font-weight:700;
+}
+
+.form-label{
+    font-weight:600;
+    color:#333;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+    border:1px solid #ced4da;
+    padding:10px 14px;
+    transition:.3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 10px rgba(13,110,253,.20);
+}
+
+.form-check{
+    margin-bottom:10px;
+}
+
+.form-check-input{
+    cursor:pointer;
+}
+
+.form-check-label{
+    cursor:pointer;
+    color:#555;
+}
+
+.form-range{
+    cursor:pointer;
+}
+
+/*======================
+Property Heading
+=======================*/
+
+.col-lg-9 h3{
+    font-weight:700;
+}
+
+.col-lg-9 .form-select{
+    width:220px;
+}
+
+/*======================
+Property Cards
+=======================*/
+
+.property-card{
+    overflow:hidden;
+    border-radius:18px;
+    transition:.35s;
+    background:#fff;
+}
+
+.property-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.property-card img{
+    height:240px;
+    object-fit:cover;
+    transition:.45s;
+}
+
+.property-card:hover img{
+    transform:scale(1.08);
+}
+
+/*======================
+Rating Badge
+=======================*/
+
+.property-card .badge.bg-success{
+    font-size:.8rem;
+    padding:8px 12px;
+}
+
+/*======================
+Heart Button
+=======================*/
+
+.property-card button{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    transition:.3s;
+}
+
+.property-card button:hover{
+    background:#dc3545 !important;
+    color:#fff;
+}
+
+.property-card button i{
+    transition:.3s;
+}
+
+.property-card button:hover i{
+    transform:scale(1.2);
+}
+
+/*======================
+Card Body
+=======================*/
+
+.property-card .card-body{
+    padding:22px;
+}
+
+.property-card h5{
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.property-card p{
+    margin-bottom:12px;
+}
+
+.property-card h4{
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+/*======================
+Amenities
+=======================*/
+
+.property-card .badge.bg-light{
+    border:1px solid #dee2e6;
+    font-weight:500;
+    padding:8px 12px;
+}
+
+/*======================
+Bottom Section
+=======================*/
+
+.property-card .btn{
+    border-radius:8px;
+    padding:9px 18px;
+    font-weight:600;
+}
+
+.property-card span.text-success,
+.property-card span.text-danger,
+.property-card span.text-warning{
+    font-weight:600;
+}
+
+/*======================
+Sticky Sidebar
+=======================*/
+
+@media(min-width:992px){
+
+    .col-lg-3 .card{
+        position:sticky;
+        top:100px;
+    }
+
+}
+
+/*==================================================
+        PART 2B
+        PROPERTY LIST PAGE
+        Pagination + Footer + Responsive
+==================================================*/
+
+/*==========================
+Pagination
+==========================*/
+
+.pagination{
+    margin-top:40px;
+}
+
+.pagination .page-link{
+    color:#0d6efd;
+    border:none;
+    margin:0 5px;
+    border-radius:10px;
+    padding:10px 16px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.pagination .page-link:hover{
+    background:#0d6efd;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.pagination .page-item.active .page-link{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.pagination .page-item.disabled .page-link{
+    color:#999;
+    background:#f5f5f5;
+}
+
+/*==========================
+Footer
+==========================*/
+
+footer{
+    background:#212529;
+}
+
+footer h4,
+footer h5{
+    font-weight:700;
+}
+
+footer p{
+    color:#d6d6d6;
+    line-height:1.8;
+}
+
+footer ul{
+    padding:0;
+}
+
+footer ul li{
+    margin-bottom:12px;
+}
+
+footer ul li a{
+    color:#d6d6d6 !important;
+    transition:.3s;
+}
+
+footer ul li a:hover{
+    color:#0d6efd !important;
+    padding-left:5px;
+}
+
+footer .bi{
+    transition:.3s;
+}
+
+footer a:hover .bi{
+    color:#0d6efd;
+    transform:translateY(-3px);
+}
+
+footer .input-group .form-control{
+    border-radius:10px 0 0 10px;
+}
+
+footer .input-group .btn{
+    border-radius:0 10px 10px 0;
+}
+
+footer hr{
+    border-color:rgba(255,255,255,.15);
+}
+
+/*==========================
+Buttons
+==========================*/
+
+.btn-primary{
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(13,110,253,.30);
+}
+
+.btn-outline-primary:hover{
+    transform:translateY(-2px);
+}
+
+/*==========================
+Property Card Animation
+==========================*/
+
+.property-card{
+    animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/*==========================
+Hover Effects
+==========================*/
+
+.property-card .badge{
+    transition:.3s;
+}
+
+.property-card:hover .badge.bg-light{
+    background:#0d6efd !important;
+    color:#fff !important;
+    border-color:#0d6efd;
+}
+
+.property-card:hover h5{
+    color:#0d6efd;
+}
+
+.property-card:hover h4{
+    color:#0b5ed7 !important;
+}
+
+/*==========================
+Mobile
+==========================*/
+
+@media(max-width:991px){
+
+    .col-lg-3{
+        margin-bottom:35px;
+    }
+
+    .col-lg-9 .d-flex{
+        flex-direction:column;
+        align-items:flex-start !important;
+        gap:15px;
+    }
+
+    .col-lg-9 .form-select{
+        width:100%;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .property-card img{
+        height:220px;
+    }
+
+    .property-card .card-body{
+        padding:18px;
+    }
+
+    .property-card .d-flex.justify-content-between{
+        flex-direction:column;
+        align-items:flex-start !important;
+        gap:15px;
+    }
+
+    .property-card .btn{
+        width:100%;
+    }
+
+    .pagination .page-link{
+        padding:8px 14px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .property-card img{
+        height:200px;
+    }
+
+    section.py-5{
+        padding:50px 0 !important;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h3{
+        font-size:1.4rem;
+    }
+
+    footer{
+        text-align:center;
+    }
+
+    footer .input-group{
+        flex-direction:column;
+    }
+
+    footer .form-control{
+        border-radius:10px;
+        margin-bottom:10px;
+    }
+
+    footer .btn{
+        border-radius:10px;
+        width:100%;
+    }
+
+}
+
+/*==================================================
+        PART 3A
+        PROPERTY DETAIL PAGE
+        Header + Gallery + Booking Card
+==================================================*/
+
+/*==========================
+Breadcrumb
+==========================*/
+
+.breadcrumb{
+    margin-bottom:0;
+}
+
+.breadcrumb-item a{
+    text-decoration:none;
+    color:#0d6efd;
+    font-weight:500;
+}
+
+.breadcrumb-item.active{
+    color:#6c757d;
+}
+
+/*==========================
+Property Header
+==========================*/
+
+section.py-5 h1{
+    font-size:2.8rem;
+    font-weight:700;
+    color:#212529;
+}
+
+section.py-5 h2{
+    font-weight:700;
+}
+
+section.py-5 .badge{
+    font-size:.9rem;
+    border-radius:30px;
+}
+
+section.py-5 p{
+    line-height:1.8;
+}
+
+/*==========================
+Main Property Image
+==========================*/
+
+.property-main-image,
+.col-lg-8>.img-fluid{
+
+    width:100%;
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.col-lg-8>.img-fluid:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+/*==========================
+Gallery Images
+==========================*/
+
+.gallery img,
+.row.g-3 img{
+
+    width:100%;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.row.g-3 img:hover{
+
+    transform:translateY(-5px) scale(1.04);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
+}
+
+/*==========================
+Booking Card
+==========================*/
+
+.booking-card,
+.sticky-top{
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+.booking-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.booking-card h3{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.booking-card p{
+
+    margin-bottom:15px;
+
+    color:#555;
+
+}
+
+.booking-card strong{
+
+    color:#212529;
+
+}
+
+/*==========================
+Booking Buttons
+==========================*/
+
+.booking-card .btn,
+
+.sticky-top .btn{
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.sticky-top .btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.interested-btn:hover{
+
+    box-shadow:0 12px 25px rgba(220,53,69,.30);
+
+}
+
+.visit-btn:hover{
+
+    box-shadow:0 12px 25px rgba(13,110,253,.30);
+
+}
+
+.contact-btn:hover{
+
+    box-shadow:0 12px 25px rgba(25,135,84,.30);
+
+}
+
+/*==========================
+Price Details
+==========================*/
+
+.sticky-top .d-flex{
+
+    padding:8px 0;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.sticky-top .d-flex:last-child{
+
+    border:none;
+
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+    .sticky-top{
+
+        position:static !important;
+
+        margin-top:35px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section.py-5 h1{
+
+        font-size:2rem;
+
+    }
+
+    .col-lg-8>.img-fluid{
+
+        height:320px;
+
+    }
+
+    .row.g-3 img{
+
+        height:90px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .col-lg-8>.img-fluid{
+
+        height:240px;
+
+    }
+
+    .row.g-3 img{
+
+        height:75px;
+
+    }
+
+    section.py-5 h1{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+/*==================================================
+        PART 3B
+        PROPERTY DETAIL PAGE
+        About + Amenities + Reviews + Similar
+==================================================*/
+
+/*==========================
+About Property
+==========================*/
+
+section.bg-light h2{
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+section.bg-light .lead{
+    color:#6c757d;
+    line-height:1.9;
+    font-size:1.08rem;
+}
+
+/*==========================
+Amenities
+==========================*/
+
+.card.shadow-sm{
+    border-radius:18px;
+    transition:.35s;
+}
+
+.card.shadow-sm:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.card.shadow-sm i{
+    transition:.35s;
+}
+
+.card.shadow-sm:hover i{
+    transform:scale(1.15);
+}
+
+.card.shadow-sm h5{
+    margin-top:10px;
+    font-weight:600;
+}
+
+/*==========================
+Rules
+==========================*/
+
+section ul{
+    padding-left:20px;
+}
+
+section ul li{
+    line-height:1.9;
+    color:#555;
+}
+
+section ul li::marker{
+    color:#0d6efd;
+}
+
+/*==========================
+Location
+==========================*/
+
+.ratio iframe{
+    border:none;
+}
+
+.text-center i{
+    transition:.3s;
+}
+
+.text-center:hover i{
+    transform:scale(1.15);
+}
+
+.text-center h5{
+    margin-top:15px;
+    font-weight:600;
+}
+
+/*==========================
+Student Reviews
+==========================*/
+
+.review-card,
+.card.text-center{
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.review-card:hover,
+.card.text-center:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.card.text-center img{
+
+    border:4px solid #fff;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+
+}
+
+.card.text-center h5{
+
+    font-weight:700;
+
+}
+
+.card.text-center p.text-warning{
+
+    font-size:1.2rem;
+
+    letter-spacing:2px;
+
+}
+
+/*==========================
+Similar Properties
+==========================*/
+
+.property-card{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.property-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.property-card img{
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.property-card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.property-card .card-body{
+
+    padding:22px;
+
+}
+
+.property-card h5{
+
+    font-weight:700;
+
+}
+
+.property-card h4{
+
+    font-weight:700;
+
+}
+
+.property-card .btn{
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.property-card .btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================
+Section Spacing
+==========================*/
+
+section{
+
+    scroll-margin-top:90px;
+
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+    .property-card img{
+
+        height:220px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .property-card img{
+
+        height:200px;
+
+    }
+
+    .card.shadow-sm{
+
+        padding:20px !important;
+
+    }
+
+    .card.text-center{
+
+        padding:20px !important;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    section.py-5{
+
+        padding:50px 0 !important;
+
+    }
+
+    h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .property-card img{
+
+        height:180px;
+
+    }
+
+    .card.text-center img{
+
+        width:75px;
+
+        height:75px;
+
+    }
+
+}
+
+/*==================================================
+            PART 4A
+        LOGIN & SIGNUP PAGE
+==================================================*/
+
+/*==========================
+Auth Section
+==========================*/
+
+.min-vh-100{
+    min-height:100vh;
+}
+
+.bg-light{
+    background:#f8f9fa !important;
+}
+
+/*==========================
+Left Content
+==========================*/
+
+.display-5{
+    font-weight:700;
+    color:#212529;
+    line-height:1.25;
+}
+
+.lead{
+    color:#6c757d;
+    line-height:1.8;
+}
+
+.badge{
+    border-radius:30px;
+    font-size:.9rem;
+    padding:10px 18px;
+}
+
+/*==========================
+Feature Blocks
+==========================*/
+
+.d-flex.align-items-center.mb-4{
+
+    transition:.35s;
+
+}
+
+.d-flex.align-items-center.mb-4:hover{
+
+    transform:translateX(8px);
+
+}
+
+.d-flex.align-items-center.mb-4 i{
+
+    transition:.35s;
+
+}
+
+.d-flex.align-items-center.mb-4:hover i{
+
+    transform:scale(1.15);
+
+}
+
+.d-flex.align-items-center.mb-4 h5{
+
+    font-weight:600;
+    color:#212529;
+
+}
+
+.d-flex.align-items-center.mb-4 p{
+
+    margin-bottom:0;
+    color:#6c757d;
+
+}
+
+/*==========================
+Form Card
+==========================*/
+
+.shadow-lg{
+
+    border-radius:22px !important;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.shadow-lg:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12) !important;
+
+}
+
+.shadow-lg h2{
+
+    font-weight:700;
+    color:#212529;
+
+}
+
+.shadow-lg p{
+
+    color:#6c757d;
+
+}
+
+/*==========================
+Labels
+==========================*/
+
+.form-label{
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+/*==========================
+Input Groups
+==========================*/
+
+.input-group{
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+.input-group-text{
+
+    background:#fff;
+
+    border-right:none;
+
+    color:#0d6efd;
+
+}
+
+.form-control,
+.form-select{
+
+    border-left:none;
+
+    height:52px;
+
+    border-radius:0;
+
+    transition:.3s;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 0 10px rgba(13,110,253,.18);
+
+}
+
+/*==========================
+Buttons
+==========================*/
+
+.btn-lg{
+
+    height:52px;
+
+    font-weight:600;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(13,110,253,.25);
+
+}
+
+.btn-outline-dark{
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-outline-dark:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==================================================
+            PART 4B
+        LOGIN & SIGNUP PAGE
+==================================================*/
+
+/*==========================
+Remember Me / Terms
+==========================*/
+
+.form-check-input{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.form-check-input:checked{
+    background-color:#0d6efd;
+    border-color:#0d6efd;
+}
+
+.form-check-label{
+    color:#555;
+    line-height:1.6;
+}
+
+.form-check-label a{
+    text-decoration:none;
+    font-weight:600;
+}
+
+.form-check-label a:hover{
+    text-decoration:underline;
+}
+
+/*==========================
+Forgot Password
+==========================*/
+
+a.text-decoration-none{
+    transition:.3s;
+}
+
+a.text-decoration-none:hover{
+    color:#0a58ca !important;
+}
+
+/*==========================
+Divider
+==========================*/
+
+hr{
+    opacity:.15;
+}
+
+/*==========================
+Google Button
+==========================*/
+
+.btn-outline-dark{
+    font-weight:600;
+}
+
+.btn-outline-dark i{
+    color:#db4437;
+}
+
+/*==========================
+Security Features
+==========================*/
+
+.d-flex.align-items-start{
+
+    transition:.35s;
+
+}
+
+.d-flex.align-items-start:hover{
+
+    transform:translateX(8px);
+
+}
+
+.d-flex.align-items-start i{
+
+    transition:.35s;
+
+}
+
+.d-flex.align-items-start:hover i{
+
+    transform:scale(1.15);
+
+}
+
+.d-flex.align-items-start h6{
+
+    font-weight:700;
+
+    color:#212529;
+
+}
+
+.d-flex.align-items-start p{
+
+    color:#6c757d;
+
+    margin-bottom:0;
+
+}
+
+/*==========================
+Footer Newsletter
+==========================*/
+
+footer .form-control{
+
+    height:46px;
+
+    border-radius:8px 0 0 8px;
+
+}
+
+footer .btn{
+
+    border-radius:0 8px 8px 0;
+
+}
+
+/*==========================
+Footer Links
+==========================*/
+
+footer a{
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:#0d6efd !important;
+
+}
+
+/*==========================
+Footer Icons
+==========================*/
+
+footer i{
+
+    transition:.3s;
+
+}
+
+footer a:hover i{
+
+    transform:translateY(-3px);
+
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+    .display-5{
+
+        font-size:2.5rem;
+
+    }
+
+    .shadow-lg{
+
+        margin-top:20px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .display-5{
+
+        font-size:2rem;
+
+    }
+
+    .shadow-lg{
+
+        padding:2rem !important;
+
+    }
+
+    .btn-lg{
+
+        height:50px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .display-5{
+
+        font-size:1.75rem;
+
+    }
+
+    .lead{
+
+        font-size:1rem;
+
+    }
+
+    .shadow-lg{
+
+        padding:1.5rem !important;
+
+        border-radius:16px !important;
+
+    }
+
+    .btn-lg,
+    .form-control,
+    .form-select{
+
+        height:48px;
+
+    }
+
+    .badge{
+
+        font-size:.8rem;
+
+        padding:8px 14px;
+
+    }
+
+}
+
+/*==================================================
+            PART 5
+      GLOBAL UTILITIES & FINAL POLISH
+==================================================*/
+
+/*==========================
+Smooth Scroll
+==========================*/
+
+html{
+    scroll-behavior:smooth;
+}
+
+/*==========================
+Body
+==========================*/
+
+body{
+    overflow-x:hidden;
+    background:#fff;
+    color:#212529;
+}
+
+/*==========================
+Images
+==========================*/
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*==========================
+Section Spacing
+==========================*/
+
+section{
+    position:relative;
+}
+
+.py-5{
+    padding-top:5rem !important;
+    padding-bottom:5rem !important;
+}
+
+/*==========================
+Buttons
+==========================*/
+
+.btn{
+    transition:all .3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn:focus{
+    box-shadow:none;
+}
+
+/*==========================
+Form Controls
+==========================*/
+
+.form-control,
+.form-select{
+
+    box-shadow:none;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    box-shadow:0 0 0 .2rem rgba(13,110,253,.15);
+
+}
+
+/*==========================
+Cards
+==========================*/
+
+.card{
+
+    transition:.35s ease;
+
+}
+
+.card:hover{
+
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
+
+}
+
+/*==========================
+Links
+==========================*/
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    text-decoration:none;
+
+}
+
+/*==========================
+Navbar
+==========================*/
+
+.navbar{
+
+    transition:.3s;
+
+}
+
+.navbar-brand{
+
+    font-weight:700;
+
+}
+
+.nav-link{
+
+    position:relative;
+
+    font-weight:500;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-3px;
+
+    width:0;
+
+    height:2px;
+
+    background:#0d6efd;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+/*==========================
+Footer
+==========================*/
+
+footer{
+
+    background:#111;
+
+}
+
+footer h4,
+footer h5{
+
+    font-weight:700;
+
+}
+
+footer p{
+
+    color:#ced4da;
+
+}
+
+footer ul{
+
+    padding-left:0;
+
+}
+
+footer li{
+
+    margin-bottom:10px;
+
+}
+
+footer a{
+
+    color:#fff;
+
+}
+
+footer a:hover{
+
+    color:#0d6efd !important;
+
+}
+
+footer .input-group{
+
+    overflow:hidden;
+
+}
+
+footer .form-control{
+
+    border:none;
+
+}
+
+footer .btn{
+
+    border-radius:0;
+
+}
+
+/*==========================
+Animations
+==========================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.zoom-in{
+
+    animation:zoomIn .5s ease;
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*==========================
+Scrollbar
+==========================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0d6efd;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0b5ed7;
+
+}
+
+/*==========================
+Selection
+==========================*/
+
+::selection{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+    .py-5{
+
+        padding-top:4rem !important;
+
+        padding-bottom:4rem !important;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.75rem;
+
+    }
+
+    .container{
+
+        padding-left:20px;
+
+        padding-right:20px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .py-5{
+
+        padding-top:3rem !important;
+
+        padding-bottom:3rem !important;
+
+    }
+
+    h1{
+
+        font-size:1.8rem;
+
+    }
+
+    h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .btn{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.nav-link.active{
+    color:#0d6efd !important;
+    font-weight:600;
+}
