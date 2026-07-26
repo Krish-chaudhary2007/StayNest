@@ -1,3 +1,22 @@
+<?php
+include("php/config.php");
+
+if (!isset($_GET['id'])) {
+    die("Property ID not found.");
+}
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM properties WHERE id = $id";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) == 0) {
+    die("Property not found.");
+}
+
+$property = mysqli_fetch_assoc($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -188,21 +207,18 @@ Sunrise Residency
 
 <span class="badge bg-success mb-3">
 
-⭐ 4.8 Rating
+⭐ <?php echo $property['rating']; ?> Rating
 
 </span>
 
 <h1 class="fw-bold mb-3">
-
-Sunrise Residency
-
+    <?php echo $property['name']; ?>
 </h1>
-
 <p class="text-muted fs-5">
 
 <i class="bi bi-geo-alt-fill text-danger"></i>
 
-Sector 62, Noida, Uttar Pradesh
+<?php echo $property['location']; ?>
 
 </p>
 
@@ -264,9 +280,9 @@ No Brokerage • Verified Property
 
 <div class="col-lg-8">
 
-<img src="images/property1.jpg"
+<img src="images/<?php echo $property['image']; ?>"
 class="img-fluid rounded-4 shadow mb-4 w-100"
-alt="Sunrise Residency">
+alt="<?php echo $property['name']; ?>">
 
 <div class="row g-3">
 
@@ -315,7 +331,7 @@ style="top:100px;">
 
 <h3 class="fw-bold text-primary">
 
-₹7,500
+₹<?php echo $property['price']; ?>
 
 <span class="fs-6 text-dark">
 
@@ -335,7 +351,7 @@ style="top:100px;">
 
 <strong>Property :</strong>
 
-Sunrise Residency
+<?php echo $property['name']; ?>
 
 </p>
 
@@ -345,7 +361,7 @@ Sunrise Residency
 
 <strong>Location :</strong>
 
-Sector 62, Noida
+<?php echo $property['location']; ?>
 
 </p>
 
@@ -355,7 +371,7 @@ Sector 62, Noida
 
 <strong>Type :</strong>
 
-Boys PG
+<?php echo $property['gender']; ?>
 
 </p>
 
@@ -385,13 +401,21 @@ Available
 
 <div class="d-grid gap-3">
 
-<button class="btn btn-danger btn-lg">
+<form action="php/interested.php" method="POST">
 
-<i class="bi bi-heart-fill"></i>
+    <input type="hidden"
+           name="property_id"
+           value="<?php echo $property['id']; ?>">
 
-Interested
+    <button type="submit" class="btn btn-danger btn-lg w-100">
 
-</button>
+        <i class="bi bi-heart-fill"></i>
+
+        Interested
+
+    </button>
+
+</form>
 
 <button class="btn btn-primary btn-lg">
 
@@ -486,9 +510,7 @@ About Property
 </h2>
 
 <p class="lead text-muted">
-
-Sunrise Residency offers safe, comfortable and fully furnished accommodation for students and working professionals. The property provides spacious rooms with attached bathrooms, high-speed WiFi, nutritious meals, housekeeping, laundry services and 24×7 security. Located near colleges, coaching institutes and metro connectivity, it provides a convenient and affordable living experience.
-
+    <?php echo $property['description']; ?>
 </p>
 
 </div>

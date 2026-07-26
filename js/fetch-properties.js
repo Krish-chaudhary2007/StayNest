@@ -34,6 +34,12 @@ fetch("php/fetch-properties.php")
                         <span class="badge bg-primary">
                             ${property.gender}
                         </span>
+                        <div class="mt-3">
+                                <a href="property-detail.php?id=${property.id}"
+                                 class="btn btn-primary w-100">
+                                 View Details
+                               </a>
+                        </div>
 
                     </div>
 
