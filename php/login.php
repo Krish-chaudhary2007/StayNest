@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             echo "<script>
                     alert('Login Successful!');
-                    window.location='../index.html';
+                    window.location='../index.php';
                   </script>";
 
         } else {

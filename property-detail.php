@@ -44,113 +44,7 @@ href="css/style.css">
 
 <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-
-<div class="container">
-
-<a class="navbar-brand d-flex align-items-center"
-href="index.html">
-
-<img src="images/logo.png"
-height="45"
-class="me-2">
-
-<span class="fw-bold fs-4">
-
-StayNest
-
-</span>
-
-</a>
-
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#navbarNav">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-<div class="collapse navbar-collapse"
-id="navbarNav">
-
-<ul class="navbar-nav ms-auto align-items-lg-center">
-
-<li class="nav-item">
-
-<a class="nav-link"
-href="index.html">
-
-Home
-
-</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link"
-href="property-list.html">
-
-Properties
-
-</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link"
-href="index.html#about">
-
-About
-
-</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link"
-href="index.html#contact">
-
-Contact
-
-</a>
-
-</li>
-
-<li class="nav-item ms-lg-3">
-
-<a href="login.html"
-class="btn btn-outline-primary">
-
-Login
-
-</a>
-
-</li>
-
-<li class="nav-item ms-lg-2">
-
-<a href="signup.html"
-class="btn btn-primary">
-
-Signup
-
-</a>
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
-
+<?php include("navbar.php"); ?>
 <!-- ================= BREADCRUMB ================= -->
 
 <section class="bg-light py-4">
@@ -163,7 +57,7 @@ Signup
 
 <li class="breadcrumb-item">
 
-<a href="index.html">
+<a href="index.php">
 
 Home
 
@@ -173,7 +67,7 @@ Home
 
 <li class="breadcrumb-item">
 
-<a href="property-list.html">
+<a href="property-list.php">
 
 Properties
 
@@ -929,7 +823,7 @@ Similar Properties
 
 </h2>
 
-<a href="property-list.html"
+<a href="property-list.php"
 class="btn btn-outline-primary">
 
 View All
@@ -1146,9 +1040,9 @@ Quick Links
 
 <ul class="list-unstyled">
 
-<li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+<li><a href="index.php" class="text-white text-decoration-none">Home</a></li>
 
-<li><a href="property-list.html" class="text-white text-decoration-none">Properties</a></li>
+<li><a href="property-list.php" class="text-white text-decoration-none">Properties</a></li>
 
 <li><a href="login.html" class="text-white text-decoration-none">Login</a></li>
 
